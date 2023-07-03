@@ -1,24 +1,19 @@
-def pattern19(N):
-    for row in range(2 * N):
-        for star in range(0, N - row):
-            print("*", end="")
-        for space in range(0, 2 * row):
-            print(" ", end="")
-        for star in range(0, N - row):
-            print("*", end="")
-        print()
+def pattern19():
+    N = int(input("Enter the value of N: "))
+    iniS = 0
+    for i in range(N):
+        print("*" * (N - i), end="")
+        print(" " * iniS, end="")
+        print("*" * (N - i))
 
-    spaces = 2 * N - 2
-    for row in range(0, N):
-        for star in range(0, row + 1):
-            print("*", end="")
-        for space in range(0, spaces):
-            print(" ", end="")
-        for star in range(0, row + 1):
-            print("*", end="")
-        spaces -= 2
-        print()
+        iniS += 2
 
-pattern19(3)
+    iniS = 2 * N - 2
+    for i in range(1, N + 1):
+        print("*" * i, end="")
+        print(" " * iniS, end="")
+        print("*" * i)
+        iniS -= 2
 
 
+pattern19()
